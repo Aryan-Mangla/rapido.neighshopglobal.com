@@ -3,7 +3,55 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>RideClone — Launch Your Ride Booking Platform</title>
+<title>Rapido Clone — Launch Your Bike Taxi Platform</title>
+<meta name="description" content="Rapido Clone — complete bike taxi platform with User app, Captain app &amp; Admin Panel. White-label, ready to deploy. ₹50,000/-"/>
+<meta name="keywords" content="Rapido clone, bike taxi app, ride booking platform, captain app, user app, admin panel, white label mobility"/>
+<meta name="author" content="Rapido Clone"/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#FFCE00"/>
+<meta name="application-name" content="Rapido Clone"/>
+<link rel="canonical" href="https://rapido.neighshopglobal.com/"/>
+<link rel="icon" type="image/png" href="https://rapido.neighshopglobal.com/logo.png" sizes="148x148"/>
+<link rel="apple-touch-icon" href="https://rapido.neighshopglobal.com/logo.png"/>
+<link rel="image_src" href="https://rapido.neighshopglobal.com/ogimage.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://rapido.neighshopglobal.com/"/>
+<meta property="og:site_name" content="Rapido Clone"/>
+<meta property="og:locale" content="en_IN"/>
+<meta property="og:title" content="Rapido Clone — User App, Captain App &amp; Admin Panel"/>
+<meta property="og:description" content="Rapido Clone — User app, Captain app &amp; Admin Panel. White-label bike taxi platform ready to deploy. ₹50,000/-"/>
+<meta property="og:image" content="https://rapido.neighshopglobal.com/ogimage.png"/>
+<meta property="og:image:secure_url" content="https://rapido.neighshopglobal.com/ogimage.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Rapido Clone — User app, Captain app, Admin Panel — ₹50,000/-"/>
+<meta property="og:logo" content="https://rapido.neighshopglobal.com/logo.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Rapido Clone — User App, Captain App &amp; Admin Panel"/>
+<meta name="twitter:description" content="Rapido Clone — User app, Captain app &amp; Admin Panel. White-label bike taxi platform ready to deploy. ₹50,000/-"/>
+<meta name="twitter:image" content="https://rapido.neighshopglobal.com/ogimage.png"/>
+<meta name="twitter:image:alt" content="Rapido Clone — User app, Captain app, Admin Panel — ₹50,000/-"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Rapido Clone",
+  "url": "https://rapido.neighshopglobal.com/",
+  "description": "Rapido Clone — complete bike taxi platform with User app, Captain app and Admin Panel. White-label, ready to deploy.",
+  "image": "https://rapido.neighshopglobal.com/ogimage.png",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rapido Clone",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rapido.neighshopglobal.com/logo.png",
+      "width": 148,
+      "height": 148
+    }
+  }
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
@@ -109,9 +157,9 @@ body{
 }
 .logo-icon{
   width:38px;height:38px;flex-shrink:0;
-  border-radius:10px;
-  background:var(--yellow);border:2px solid var(--black);
-  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
 }
 .nav-links{display:flex;gap:28px;list-style:none;flex-shrink:0}
 .nav-links a{
@@ -833,6 +881,65 @@ footer{
   padding:28px 24px;text-align:center;font-size:.82rem;
 }
 
+/* sticky bottom video preview */
+.sticky-video{
+  position:fixed;
+  bottom:20px;right:20px;z-index:1080;
+  width:min(340px,calc(100vw - 40px));
+  background:var(--black);
+  border:3px solid var(--black);
+  border-radius:var(--radius);
+  box-shadow:6px 6px 0 var(--yellow);
+  overflow:hidden;
+  transform:translateY(0);
+  opacity:1;
+  transition:transform .35s var(--ease),opacity .35s var(--ease);
+}
+.sticky-video.is-hidden{
+  transform:translateY(calc(100% + 32px));
+  opacity:0;
+  pointer-events:none;
+  visibility:hidden;
+}
+.sticky-video-head{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:8px 40px 8px 12px;
+  background:var(--yellow);
+  border-bottom:2px solid var(--black);
+}
+.sticky-video-head span{
+  font-size:.72rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.04em;color:var(--black);
+  display:flex;align-items:center;gap:6px;
+}
+.sticky-video-head .live-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:#ff3b3b;animation:blink 1s ease infinite;
+}
+.sticky-video-close{
+  position:absolute;top:6px;right:6px;z-index:2;
+  width:28px;height:28px;border-radius:50%;
+  border:2px solid var(--black);
+  background:var(--white);color:var(--black);
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s,transform .2s;
+}
+.sticky-video-close:hover{background:var(--yellow-light);transform:scale(1.05)}
+.sticky-video-close .icon{width:14px;height:14px}
+.sticky-video-player{
+  position:relative;width:100%;
+  aspect-ratio:16/9;
+  background:#111;
+}
+.sticky-video-player iframe{
+  position:absolute;inset:0;width:100%;height:100%;border:0;
+}
+.sticky-video-link{
+  display:block;text-decoration:none;color:inherit;
+}
+.sticky-video-link:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
+
 /* scroll animations */
 .reveal,.reveal-left,.reveal-right,.reveal-scale{
   opacity:0;
@@ -921,6 +1028,15 @@ footer{
   .btn-nav .icon{display:inline-flex;width:16px;height:16px}
   .btn-nav-full{display:none}
   .btn-nav-short{display:inline}
+
+  .sticky-video{
+    left:16px;right:16px;bottom:14px;
+    width:auto;max-width:420px;margin:0 auto;
+    box-shadow:4px 4px 0 var(--yellow);
+  }
+  .sticky-video-head{padding:7px 38px 7px 10px}
+  .sticky-video-head span{font-size:.66rem}
+  .sticky-video-close{top:5px;right:5px;width:26px;height:26px}
 
   /* —— hero (natural DOM order, no flex order hacks) —— */
   .hero{
@@ -1209,8 +1325,8 @@ footer{
 <nav class="main-nav" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="#top" class="nav-logo">
-      <div class="logo-icon"><i data-lucide="car" class="icon icon-md"></i></div>
-      <span>RideClone</span>
+      <img src="logo.png" alt="Rapido Clone" class="logo-icon" width="38" height="38"/>
+      <span>Rapido Clone</span>
     </a>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
@@ -1242,10 +1358,10 @@ footer{
       <div class="hero-title-block reveal-left">
         <p class="hero-eyebrow">LAUNCH YOUR OWN</p>
         <h1 class="hero-mega">
-          <span class="yellow-slab">RIDE BOOKING</span>
-          <span class="hero-clone">PLATFORM</span>
+          <span class="yellow-slab">RAPIDO</span>
+          <span class="hero-clone">CLONE</span>
         </h1>
-        <p class="hero-tagline">White-label apps + admin panel · Launch in days</p>
+        <p class="hero-tagline">User app · Captain app · Admin panel · Launch in days</p>
       </div>
       <div class="platform-badges reveal-right">
         <div class="plat-badge"><i data-lucide="smartphone" class="icon icon-sm"></i> Android</div>
@@ -1254,7 +1370,7 @@ footer{
     </div>
 
     <div class="hero-visual-wrap reveal-scale">
-      <img src="pc-preview.png" alt="Ride booking platform preview" class="hero-preview-img" width="1200" height="800"/>
+      <img src="pc-preview.png" alt="Rapido Clone platform preview" class="hero-preview-img" width="1200" height="800"/>
       <div class="deploy-badge">100%<br>READY TO<br>DEPLOY</div>
     </div>
 
@@ -1262,7 +1378,7 @@ footer{
       <a href="#platform-demo-video" class="btn-hero btn-hero-video">
         <i data-lucide="play-circle" class="icon"></i> See Demo Video
       </a>
-      <a href="https://wa.me/918307802643?text=Hi%2C%20I%20would%20like%20to%20book%20a%20free%20demo%20for%20the%20ride%20booking%20platform." target="_blank" rel="noopener noreferrer" class="btn-hero btn-hero-book">
+      <a href="https://wa.me/918307802643?text=Hi%2C%20I%20would%20like%20to%20book%20a%20free%20demo%20for%20the%20Rapido%20Clone%20platform." target="_blank" rel="noopener noreferrer" class="btn-hero btn-hero-book">
         <i data-lucide="message-circle" class="icon"></i> Book Free Demo
       </a>
     </div>
@@ -1273,7 +1389,7 @@ footer{
         <div class="deliverables-header-icon"><i data-lucide="list-checks" class="icon icon-lg"></i></div>
         <div>
           <h3>Complete Deliverables</h3>
-          <p>Everything included in your ride booking platform</p>
+          <p>Everything included in your Rapido Clone platform</p>
         </div>
       </div>
       <ul class="deliverables-list">
@@ -1293,26 +1409,24 @@ footer{
       </div>
     </div>
 
-    <!-- Replace VIDEO_ID in the iframe src with your YouTube demo video ID -->
     <section class="demo-video-section reveal" id="platform-demo-video" aria-label="Platform demo video">
       <div class="demo-video-card">
         <div class="demo-video-header">
           <div class="demo-video-header-icon"><i data-lucide="play" class="icon icon-lg"></i></div>
           <div>
             <h3>Watch Platform Demo</h3>
-            <p>See the ride booking apps in action</p>
+            <p>See the Rapido Clone apps in action</p>
           </div>
         </div>
         <div class="video-player-wrap">
           <iframe
-            src="https://www.youtube.com/embed/ScMzIvxBSi4?rel=0&modestbranding=1"
-            title="RideClone platform demo video"
+            src="https://www.youtube.com/embed/wpK1i4Sxjbc?rel=0&modestbranding=1"
+            title="Rapido Clone platform demo video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
             loading="lazy"
           ></iframe>
         </div>
-        <p class="demo-video-footer">Placeholder video — swap the YouTube link in <code>index.html</code> with your demo recording.</p>
       </div>
     </section>
 
@@ -1409,7 +1523,7 @@ footer{
     <div class="tab-content" id="tab-website">
       <div class="feature-card reveal"><div class="feat-icon"><i data-lucide="layout-template" class="icon icon-md"></i></div><h3 class="feat-title">Customer Landing Page</h3><p class="feat-desc">Branded marketing website to drive app downloads and customer acquisition.</p></div>
       <div class="feature-card reveal"><div class="feat-icon"><i data-lucide="download" class="icon icon-md"></i></div><h3 class="feat-title">App Download Links</h3><p class="feat-desc">Play Store and App Store download buttons integrated into the homepage.</p></div>
-      <div class="feature-card reveal"><div class="feat-icon"><i data-lucide="palette" class="icon icon-md"></i></div><h3 class="feat-title">Fully Branded</h3><p class="feat-desc">Your logo, colors and identity — completely white-label, no RideClone branding.</p></div>
+      <div class="feature-card reveal"><div class="feat-icon"><i data-lucide="palette" class="icon icon-md"></i></div><h3 class="feat-title">Fully Branded</h3><p class="feat-desc">Your logo, colors and identity — completely white-label, no third-party branding.</p></div>
       <div class="feature-card reveal"><div class="feat-icon"><i data-lucide="smartphone" class="icon icon-md"></i></div><h3 class="feat-title">Mobile Responsive</h3><p class="feat-desc">Looks great on all devices — desktop, tablet and mobile.</p></div>
     </div>
   </div>
@@ -1641,7 +1755,7 @@ footer{
       <div class="demo-card reveal" style="--i:1"><div class="demo-icon"><i data-lucide="car" class="icon icon-2xl"></i></div><div class="demo-title">Driver Demo</div><div class="demo-desc">Accept rides, track earnings, manage your status and experience driver-side flow.</div></div>
       <div class="demo-card reveal" style="--i:2"><div class="demo-icon"><i data-lucide="settings" class="icon icon-2xl"></i></div><div class="demo-title">Admin Demo</div><div class="demo-desc">Full dashboard access — monitor rides, manage users, review analytics live.</div></div>
     </div>
-    <a href="https://wa.me/918307802643?text=Hi%2C%20I%20would%20like%20to%20book%20a%20free%20demo%20for%20the%20ride%20booking%20platform." target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="font-size:1rem;padding:16px 36px"><i data-lucide="message-circle" class="icon"></i> Request Demo Access</a>
+    <a href="https://wa.me/918307802643?text=Hi%2C%20I%20would%20like%20to%20book%20a%20free%20demo%20for%20the%20Rapido%20Clone%20platform." target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="font-size:1rem;padding:16px 36px"><i data-lucide="message-circle" class="icon"></i> Request Demo Access</a>
   </div>
 </section>
 
@@ -1665,29 +1779,62 @@ footer{
   <h2 class="reveal">Launch Your Ride Booking<br>Business Today</h2>
   <p class="reveal">Ready software. Faster launch. Your brand. Zero development wait.</p>
   <div class="cta-btns reveal">
-    <a href="https://wa.me/918307802643?text=Hi%2C%20I%20would%20like%20to%20book%20a%20free%20demo%20for%20the%20ride%20booking%20platform." target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="font-size:1rem;padding:16px 32px"><i data-lucide="message-circle" class="icon"></i> Get Demo Access</a>
+    <a href="https://wa.me/918307802643?text=Hi%2C%20I%20would%20like%20to%20book%20a%20free%20demo%20for%20the%20Rapido%20Clone%20platform." target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="font-size:1rem;padding:16px 32px"><i data-lucide="message-circle" class="icon"></i> Get Demo Access</a>
     <a href="https://wa.me/919999999999" target="_blank" class="btn-whatsapp" style="font-size:1rem;padding:16px 32px"><i data-lucide="message-circle" class="icon"></i> WhatsApp Us Now</a>
   </div>
 </section>
 
+<!-- sticky bottom video preview -->
+<aside class="sticky-video" id="sticky-video" aria-label="Platform demo video preview">
+  <button type="button" class="sticky-video-close" id="sticky-video-close" aria-label="Close video preview">
+    <i data-lucide="x" class="icon"></i>
+  </button>
+  <div class="sticky-video-head">
+    <span><span class="live-dot" aria-hidden="true"></span> Platform demo</span>
+  </div>
+  <a href="#platform-demo-video" class="sticky-video-link">
+    <div class="sticky-video-player">
+      <iframe
+        id="sticky-video-iframe"
+        title="Rapido Clone demo preview"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </a>
+</aside>
+
 <footer>
-  <p>© 2025 RideClone. All rights reserved. · Built for mobility entrepreneurs.</p>
+  <p>© 2025 Rapido Clone. All rights reserved. · Built for mobility entrepreneurs.</p>
 </footer>
 
 <script>
 function initIcons(){if(typeof lucide!=='undefined')lucide.createIcons()}
 
-// countdown — 2 days from first visit
-const DEADLINE_KEY='rideclone_deadline';
-let deadline=localStorage.getItem(DEADLINE_KEY);
-if(!deadline){
-  deadline=Date.now()+2*24*60*60*1000;
-  localStorage.setItem(DEADLINE_KEY,deadline);
-}else{deadline=Number(deadline)}
+// countdown — always ~2 days out; when near expiry, roll forward +2 days
+const DEADLINE_KEY='rapido_clone_deadline';
+const TWO_DAYS=2*24*60*60*1000;
+const NEAR_THRESHOLD=6*60*60*1000; // extend when under 6 hours left
+
+function getDeadline(){
+  let deadline=Number(localStorage.getItem(DEADLINE_KEY));
+  const now=Date.now();
+  if(!deadline||deadline-now<=NEAR_THRESHOLD){
+    deadline=now+TWO_DAYS;
+    localStorage.setItem(DEADLINE_KEY,String(deadline));
+  }
+  return deadline;
+}
 
 function pad(n){return String(n).padStart(2,'0')}
 function tickCountdown(){
-  const diff=Math.max(0,deadline-Date.now());
+  let deadline=getDeadline();
+  let diff=deadline-Date.now();
+  if(diff<=NEAR_THRESHOLD){
+    deadline=Date.now()+TWO_DAYS;
+    localStorage.setItem(DEADLINE_KEY,String(deadline));
+    diff=deadline-Date.now();
+  }
   const d=Math.floor(diff/86400000);
   const h=Math.floor((diff%86400000)/3600000);
   const m=Math.floor((diff%3600000)/60000);
@@ -1729,6 +1876,34 @@ function toggleFaq(el){
 }
 
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el=>observer.observe(el));
+
+// sticky bottom video — autoplay muted; closable for session
+(function initStickyVideo(){
+  const KEY='rapido_sticky_video_closed';
+  const VIDEO_SRC='https://www.youtube.com/embed/wpK1i4Sxjbc?rel=0&modestbranding=1&autoplay=1&mute=1&playsinline=1&loop=1&playlist=wpK1i4Sxjbc&controls=1';
+  const wrap=document.getElementById('sticky-video');
+  const iframe=document.getElementById('sticky-video-iframe');
+  const closeBtn=document.getElementById('sticky-video-close');
+  if(!wrap||!iframe||!closeBtn)return;
+
+  function hidePreview(){
+    wrap.classList.add('is-hidden');
+    iframe.removeAttribute('src');
+    sessionStorage.setItem(KEY,'1');
+  }
+
+  if(sessionStorage.getItem(KEY)){
+    wrap.classList.add('is-hidden');
+  }else{
+    iframe.src=VIDEO_SRC;
+  }
+
+  closeBtn.addEventListener('click',e=>{
+    e.preventDefault();
+    e.stopPropagation();
+    hidePreview();
+  });
+})();
 
 initIcons();
 </script>
